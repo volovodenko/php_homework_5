@@ -1,0 +1,53 @@
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+ol li {
+    margin: 5px 50px;
+}
+
+ul li {
+    list-style: none;
+    margin-left: 10px;
+}
+
+.code, .code_calc {
+    background-color: lightgray;
+    border: 2px solid blue;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.code_calc {
+    max-height: 250px;
+    overflow: scroll;
+}
+
+.operator {
+    width: 230px;
+    padding: 5px;
+    text-align: center;
+}
+
+.textarea {
+    width: 300px;
+    height: 50px;
+}
+
+.images {
+
+}
+
+.images img {
+    height: 200px;
+    padding-right: 10px;
+}
+
+.comment {
+    border: 1px solid gray;
+    margin: 10px;
+}
+
+
+
