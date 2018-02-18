@@ -11,29 +11,14 @@
  * А воз и ныне там. А Васька слушает да ест."
  *
  */
+include("./common_functions/getPOST.php");
+include("./common_functions/echoResult.php");
+include("./12/stringRev.php");
 
-$message = @$_POST["text"];
+$message = getPost("text");
 
-function stringRev($string) {
-    $string = mb_convert_encoding($string, "UTF-8"); //преобразовали строку в UTF-8
-    $array = explode(".", $string); //разбили в массив по каждому слову
-    array_walk($array, function(&$val) {
-        $val = trim($val); //обрезаем пробелы
-        $val .= ".";
-    });
-    $array = array_reverse($array); //обернули массив
-    return implode(" ", $array);
-}
-
-if (@$_POST["submit"]) {
-    if ($message) {
-        echo stringRev($message);
-        echo "<hr><br>";
-    }
+if (!empty($message)) {
+    echoResult(stringRev($message), "submit");
 }
 ?>
-<form method="POST" action="./load.php?task=12">
-    <textarea name="text" class="textarea" required placeholder="Введите текст"><?=$message?></textarea>
-    <br>
-    <input type="submit" name="submit" value="Отправить">
-</form>
+<?php include("./12/content12.php") ?>

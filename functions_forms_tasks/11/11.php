@@ -10,32 +10,14 @@
  * А вы друзья как ни садитесь, все в музыканты не годитесь. А король-то — голый.
  * А ларчик просто открывался.А там хоть трава не расти."
  */
+include("./common_functions/getPOST.php");
+include("./common_functions/echoResult.php");
+include("./11/firstUpper.php");
 
-$message = @$_POST["text"];
+$message = getPost("text");
 
-function mb_ucfirst($string) {
-    return (mb_strtoupper(mb_substr($string, 0, 1)) . mb_substr($string, 1));
-}
-
-function firstUpper($string) {
-    $string = mb_convert_encoding($string, "UTF-8"); //преобразовали строку в UTF-8
-    $array = explode(".", $string); //разбили в массив
-    array_walk($array, function(&$val) {
-        $val = trim($val); //обрезаем пробелы
-        $val = mb_ucfirst($val) . ".";
-    });
-    return implode(" ", $array);
-}
-
-if (@$_POST["submit"]) {
-    if ($message) {
-        echo firstUpper($message);
-        echo "<hr><br>";
-    }
+if (!empty($message)) {
+    echoResult(firstUpper($message), "submit");
 }
 ?>
-<form method="POST" action="./load.php?task=11">
-    <textarea name="text" class="textarea" required placeholder="Введите текст"><?=$message?></textarea>
-    <br>
-    <input type="submit" name="submit" value="Отправить">
-</form>
+<?php include("./11/content11.php") ?>

@@ -31,8 +31,18 @@ ul li {
 }
 
 .textarea {
-    width: 300px;
+    width: 400px;
     height: 50px;
+    min-width: 300px;
+    min-height: 50px;
+    border: 1px solid royalblue;
+    border-radius: 5px;
+    padding: 5px;
+    outline: 0 !important;
+}
+
+.textarea:focus {
+    border: 1px solid red;
 }
 
 .images {
@@ -47,6 +57,40 @@ ul li {
 .comment {
     border: 1px solid gray;
     margin: 10px;
+    margin-bottom: 20px;
+    width: 500px;
+    background-color: royalblue;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 3px 3px 3px gray;
+}
+
+.number {
+    height: 20px;
+}
+
+.submit {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
+    box-shadow: 2px 2px 2px gray;
+    outline: 0 !important;
+}
+
+.submit:hover {
+    background-color: orangered;
+}
+
+.submit:active {
+    outline: 0 !important;
+    background-color: blue;
+    box-shadow:
+            inset 2px 2px 2px orangered,
+            inset -2px -2px 2px orangered;
 }
 
 
